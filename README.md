@@ -28,6 +28,16 @@ Want to play offline? Download **[Greenlight.html](Greenlight.html)** using GitH
 
 You can also use the buttons under the court on a touchscreen.
 
+## Under the hood
+
+This started with one question: can shooting a basketball feel good with just one key?
+
+The game keeps the rules separate from the 3D scene. A possession goes through *ready → charging → ball in flight → reset*. `dist/rules.js` handles release grades, the 2-point/3-point boundary, blocking checks, and whose turn comes next. `dist/game.js` handles input, animation, and rendering.
+
+A full shot-meter cycle lasts 1.25 seconds, and the ideal release is about 0.85 seconds in. The green window is deliberately narrow; the timing rules are deterministic and covered by `npm test`.
+
+**Tradeoff:** this is simplified arcade physics, not a realistic basketball simulation. I'd rather have shots that feel responsive than make someone wait through a physics lecture before playing.
+
 ## Running the project
 
 You'll need Node.js 18+ if you want to build or run tests, but there's nothing to install.
