@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#56358a"><meta name="description" content="An old-school basketball arcade game on Jerel Clark’s court.">
+<title>GREENLIGHT | Jerel’s Court</title>
+<link rel="stylesheet" href="./dist/style.css">
+</head>
+<body>
+<header><a class="brand" href="./" aria-label="Greenlight home"><span class="brand-ball">🏀</span> GREENLIGHT</a><span class="edition">BASKETBALL ARCADE</span><div class="header-actions"><button id="help" title="How to play">How to play <span>↗</span></button><button id="audio" class="icon" aria-label="Enable sound" title="Toggle sound">♫</button><button id="fullscreen" class="icon" aria-label="Enter fullscreen" title="Fullscreen">⛶</button></div></header>
+<main>
+<section class="stage" aria-label="Basketball game">
+<div id="court"></div><div class="vignette"></div>
+<div class="scene-label"><span class="live-dot"></span> JEREL’S COURT</div>
+<div class="scoreboard"><div><span id="name0">MADE</span><strong id="score0">00</strong></div><div class="score-center"><span id="scoreLabel">FREE PLAY</span><b>:</b><small id="round">FIND YOUR RHYTHM</small></div><div><span id="name1">ATTEMPTS</span><strong id="score1">00</strong></div></div>
+<div class="session-card"><span class="eyebrow">GAME MODE</span><div class="mode-switch" role="group" aria-label="Game mode"><button class="selected" id="practice">Practice</button><button id="duel">2 players</button></div><p id="modeDescription">Find your release. No defender.<br>No clock. Just you and the hoop.</p><div class="card-rule"></div><div class="stat"><span id="statLabel">BEST STREAK</span><b id="best">0</b></div><button id="reset" class="text-button">Restart <span>↻</span></button></div>
+<div id="feedback" class="feedback" aria-live="polite"><b id="feedbackTitle"></b><span id="feedbackDetail"></span></div>
+<div class="court-footer"><span><i class="court-dot"></i> PICK-UP BASKETBALL</span><span id="distance">2-POINT RANGE</span></div>
+<div id="webglError" class="error" hidden>This court needs WebGL. Open it in a current Chrome, Safari, or Firefox browser with hardware acceleration enabled.</div>
+<div id="intro" class="modal-wrap"><div class="intro-panel"><div class="eyebrow">JEREL CLARK’S</div><h2>GREENLIGHT<br><em>HOOPS!</em></h2><p>Hold <kbd>S</kbd> to charge your shot.<br>Release inside the <span class="green-text">green zone</span> to knock it down.</p><button id="start" class="primary">PLAY! <span>▶</span></button><small>1 OR 2 PLAYERS • KEYBOARD / TOUCH</small></div></div>
+<div id="helpModal" class="modal-wrap" hidden><div class="help-panel"><button class="close" id="closeHelp" aria-label="Close instructions">×</button><div class="eyebrow">CONTROLS</div><h2>HOW TO PLAY</h2><div class="help-grid"><div><b>01 / SHOOTER</b><p><kbd>A</kbd> <kbd>D</kbd> Move left / right.<br><kbd>S</kbd> Hold to charge, release to shoot.<br>Hit the green window. Corners are 3s.</p></div><div><b>02 / DEFENDER</b><p><kbd>←</kbd> <kbd>→</kbd> Stay in front.<br><kbd>Space</kbd> Jump to block.<br>Time your jump. Landing has a cooldown.</p></div><div><b>03 / THE DUEL</b><p>Share one keyboard. Switch roles after every shot. Five shots each. Highest score wins; a tie is a draw.</p></div><div><b>04 / YOUR RELEASE</b><p>Green = accurate shot. A defender can still block it. Nearly green goes in when open. Early or late misses.</p></div></div><p class="help-note">Press Esc to pause. Touch buttons support simultaneous holds for two-player play on a shared screen.</p><button id="helpDone" class="primary">BACK TO COURT <span>↗</span></button></div></div>
+<div id="pauseModal" class="modal-wrap" hidden><div class="intro-panel"><div class="eyebrow">TIME OUT!</div><h2>Game paused.</h2><p>Your session is right where you left it.</p><button id="resume" class="primary">RESUME <span>↗</span></button></div></div>
+<div id="endModal" class="modal-wrap" hidden><div class="intro-panel"><div class="eyebrow">THAT’S GAME</div><h2 id="winner">Player 1 wins.</h2><p id="finalScore"></p><button id="rematch" class="primary">RUN IT BACK <span>↗</span></button></div></div>
+</section>
+<section class="control-deck"><div class="shooter-controls"><span class="control-label" id="shooterLabel">YOUR SHOT</span><div class="control-row"><button data-hold="KeyA" aria-label="Move shooter left"><kbd>A</kbd></button><button data-hold="KeyD" aria-label="Move shooter right"><kbd>D</kbd></button><span>MOVE</span><button data-hold="KeyS" class="shoot-touch"><kbd>S</kbd><span>HOLD TO SHOOT</span></button></div></div><div class="meter-panel"><div class="meter-heading"><span id="meterHint">HOLD S. RELEASE ON GREEN.</span><span id="releaseTime">0.00s</span></div><div class="meter-track"><div class="meter-fill" id="meterFill"></div><div class="good-zone"></div><div class="green-zone"></div><div class="meter-needle" id="needle"></div></div><div class="meter-labels"><span>EARLY</span><span class="green-text">PERFECT RELEASE</span><span>LATE</span></div></div><div class="defender-controls"><span class="control-label" id="defenderLabel">DEFENDER · 2P MODE</span><div class="control-row"><button data-hold="ArrowLeft" aria-label="Move defender left"><kbd>←</kbd></button><button data-hold="ArrowRight" aria-label="Move defender right"><kbd>→</kbd></button><button data-hold="Space" class="block-touch"><kbd>SPACE</kbd><span>BLOCK</span></button></div></div></section>
+</main>
+<footer><span>GREENLIGHT • A LITTLE BROWSER BASKETBALL</span><span> <a href="https://github.com/jerelclark2-bit/Greenlight_dali" target="_blank" rel="noopener noreferrer">SOURCE CODE ↗</a></span></footer>
+<script type="module" src="./dist/game.js"></script>
+</body></html>
