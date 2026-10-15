@@ -8,7 +8,7 @@ Made for Dartmouth's DALI 26F development challenge.
 
 ## Play
 
-**[PLAY GREENLIGHT](https://jerelclark2-bit.github.io/Greenlight_dali/)** — the web version (GitHub Pages needs to be enabled first).
+**[PLAY GREENLIGHT](https://jerelclark2-bit.github.io/Greenlight_dali/)** — play in your browser.
 
 Want to play offline? Download **[Greenlight.html](Greenlight.html)** using GitHub's **Download raw file** option and open it in your browser. No install, no Wi-Fi, no setup.
 
